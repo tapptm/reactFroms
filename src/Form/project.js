@@ -29,7 +29,7 @@ class TestForm extends React.Component {
 
   getProjectType = () => {
     axios
-      .get("http://localhost:4000/project-type")
+      .get("http://localhost:4000/api/get/project-type")
       .then((resp) => {
         // console.log(resp.data);
         this.setState({
@@ -43,7 +43,7 @@ class TestForm extends React.Component {
 
   getSourceFunds = () => {
     axios
-      .get("http://localhost:4000/source-funds")
+      .get("http://localhost:4000/api/get/source_funds")
       .then((res) => {
         this.setState({
           source_funds: res.data,
@@ -53,6 +53,10 @@ class TestForm extends React.Component {
         console.log(err);
       });
   };
+
+  getUserIdCard = () => {
+    axios.post("http://localhost:4000/api/get/bb-user/")
+  }
 
   componentDidMount = () => {
     this.getProjectType();
@@ -98,7 +102,7 @@ class TestForm extends React.Component {
     }
 
     axios
-      .post("http://localhost:4000/project", formData)
+      .post("http://localhost:4000/api/post/coordinator_fundingagency_project", formData)
       .then((res) => {
         console.log(res.data.massage);
         alert(res.data.massage);

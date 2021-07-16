@@ -57,7 +57,7 @@ class TestForm extends React.Component {
     };
 
     axios
-      .post("http://localhost:4000/about-fundingagency", fundingagencyObj)
+      .post("http://localhost:4000/api/post/coordinator_about_fundingagency", fundingagencyObj)
       .then((res) => {
         console.log(res.data.massage);
         alert(res.data.massage);
