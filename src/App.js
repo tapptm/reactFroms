@@ -11,7 +11,7 @@ import Project from './Form/project'
 
 export default function BasicExample() {
   return (
-    <Router>
+    <Router basename="/app">
       <div>
         <ul>
           <li>
