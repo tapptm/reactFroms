@@ -29,7 +29,7 @@ class TestForm extends React.Component {
 
   getProjectType = () => {
     axios
-      .get("http://localhost:4000/api/get/project-type")
+      .get("https://api.rmutiresmonitoring.com/api/get/project-type")
       .then((resp) => {
         // console.log(resp.data);
         this.setState({
@@ -43,7 +43,7 @@ class TestForm extends React.Component {
 
   getSourceFunds = () => {
     axios
-      .get("http://localhost:4000/api/get/source_funds")
+      .get("https://api.rmutiresmonitoring.com/api/get/source_funds")
       .then((res) => {
         this.setState({
           source_funds: res.data,
@@ -55,7 +55,7 @@ class TestForm extends React.Component {
   };
 
   getUserIdCard = () => {
-    axios.post("http://localhost:4000/api/get/bb-user/")
+    axios.post("https://api.rmutiresmonitoring.com/api/get/bb-user/")
   }
 
   componentDidMount = () => {
@@ -102,7 +102,7 @@ class TestForm extends React.Component {
     }
 
     axios
-      .post("http://localhost:4000/api/post/coordinator_fundingagency_project", formData)
+      .post("https://api.rmutiresmonitoring.com/api/post/coordinator_fundingagency_project", formData)
       .then((res) => {
         console.log(res.data.massage);
         alert(res.data.massage);
